@@ -29,7 +29,7 @@ Application mobile Flutter de gestion de paiements échelonnés (clients, presta
 
 1. Cloner le repo :
    ```bash
-   git clone <url-du-repo>
+   git clone[ <url-du-repo>](https://github.com/macherkiJawher/Taksit.git)
    cd paiement_facilite_app
    ```
 2. Installer les dépendances :
