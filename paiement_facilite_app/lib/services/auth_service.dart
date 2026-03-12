@@ -10,7 +10,7 @@ class AuthService {
   // 🔐 LOGIN
   static Future<AuthResponse> login(String email, String password) async {
     final response = await http.post(
-      Uri.parse("${ApiConfig.baseUrl}/login"),
+      Uri.parse("${ApiConfig.baseUrl}/auth/login"),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "email": email,
@@ -44,7 +44,7 @@ class AuthService {
   // 📝 REGISTER
   static Future<String> register(RegisterRequest request) async {
     final response = await http.post(
-      Uri.parse("${ApiConfig.baseUrl}/register"),
+      Uri.parse("${ApiConfig.baseUrl}/auth/register"),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode(request.toJson()),
     );

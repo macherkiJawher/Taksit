@@ -62,8 +62,7 @@ class _ClientEcheancierDetailsScreenState
   // ✅ Afficher QR Code dans un dialog
   Future<void> _afficherQrCode(int mensualiteId) async {
     final token = await TokenStorage.getToken();
-    final baseUrl = ApiConfig.baseUrl.replaceAll('/api/auth', '');
-    final url = "$baseUrl/api/mensualites/$mensualiteId/qrcode";
+    final url = "${ApiConfig.baseUrl}/mensualites/$mensualiteId/qrcode";
 
     if (!mounted) return;
 

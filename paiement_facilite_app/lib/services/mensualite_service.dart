@@ -1,10 +1,11 @@
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'dart:io';
+import '../core/constants/api_config.dart';
 import '../core/storage/token_storage.dart';
 
 class MensualiteService {
-  static const baseUrl = "http://10.0.2.2:8080/api/mensualites";
+  static final baseUrl = "${ApiConfig.baseUrl}/mensualites";
 
   // ✅ Payer sans photo (existant)
   static Future<void> payer(int mensualiteId) async {

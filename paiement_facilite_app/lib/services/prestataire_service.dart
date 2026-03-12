@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:paiement_facilite_app/models/prestataire_stats.dart';
+import '../core/constants/api_config.dart';
 import '../core/storage/token_storage.dart';
 import '../models/prestataire.dart';
 
 class PrestataireService {
-    static const baseUrl = "http://10.0.2.2:8080/api";
+    static final baseUrl = ApiConfig.baseUrl;
 
 
   static Future<Prestataire> getMe() async {

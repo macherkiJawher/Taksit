@@ -1,12 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import '../core/constants/api_config.dart';
 import '../core/storage/token_storage.dart';
 import 'notification_service.dart';
 
 class AlerteService {
 
-  static const baseUrl = "http://10.0.2.2:8080/api/alertes";
+  static final baseUrl = "${ApiConfig.baseUrl}/alertes";
 
   // ✅ Récupérer toutes les alertes
   static Future<List<dynamic>> getMesAlertes() async {

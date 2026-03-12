@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../core/constants/api_config.dart';
 import '../core/storage/token_storage.dart';
 import '../models/echeancier.dart';
 
 class EcheancierService {
-  static const baseUrl = "http://10.0.2.2:8080/api/echeanciers";
+  static final baseUrl = "${ApiConfig.baseUrl}/echeanciers";
 
   // 🔹 Créer un échéancier
  static Future<Echeancier> creer({
@@ -94,7 +95,7 @@ class EcheancierService {
   static Future<List<Echeancier>> getByClientId(int clientId) async {
     final token = await TokenStorage.getToken();
     final response = await http.get(
-      Uri.parse("http://10.0.2.2:8080/api/echeanciers/client/$clientId"),
+      Uri.parse("${ApiConfig.baseUrl}/echeanciers/client/$clientId"),
       headers: {
         "Authorization": "Bearer $token",
         "Content-Type": "application/json",

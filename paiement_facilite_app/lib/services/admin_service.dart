@@ -5,7 +5,7 @@ import '../core/constants/api_config.dart';
 import '../core/storage/token_storage.dart';
 
 class AdminService {
-  static const baseUrl = "http://10.0.2.2:8080/api/admin";
+  static final baseUrl = "${ApiConfig.baseUrl}/admin";
 
   static Future<Map<String, dynamic>> getStats() async {
     final token = await TokenStorage.getToken();

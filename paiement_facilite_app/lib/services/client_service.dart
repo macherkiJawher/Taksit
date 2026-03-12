@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../core/constants/api_config.dart';
 import '../core/storage/token_storage.dart';
 import '../models/client.dart';
 
 class ClientService {
-  static const baseUrl = "http://10.0.2.2:8080/api/clients";
+  static final baseUrl = "${ApiConfig.baseUrl}/clients";
 
   static Future<List<Client>> searchByName(String nom) async {
     final token = await TokenStorage.getToken();
@@ -43,7 +44,7 @@ class ClientService {
 // lib/services/client_service.dart
 
 
-  static const baseUrl1 = "http://10.0.2.2:8080/api";
+  static final baseUrl1 = ApiConfig.baseUrl;
 
   // 🔍 Rechercher clients par nom (pour prestataire)
   
